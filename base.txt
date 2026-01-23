@@ -1,0 +1,482 @@
+A continuación tienes una guía básica, estructurada y por pasos, centrada exclusivamente en el software, para llegar desde cero hasta un sistema kiosk funcional con launcher propio, emulación retro y mando obligatorio.
+No entraremos en hardware ni optimizaciones aún.
+La guía está pensada para Ubuntu + Xorg + JavaFX (tu opción sólida).
+
+GUÍA DE SOFTWARE — DE 0 A SISTEMA FUNCIONAL
+
+FASE 0 — Diseño mínimo (antes de tocar nada)
+Objetivo: no improvisar.
+Debes tener claro:
+
+
+App principal única (launcher)
+
+
+Todo se lanza desde ahí
+
+
+El usuario no puede salir accidentalmente
+
+
+Resultado de esta fase:
+
+
+Diagrama mental del flujo
+
+
+Lista de apps a lanzar (RetroArch, Chromium, Kodi, etc.)
+
+
+
+FASE 1 — Sistema base (SO limpio)
+Paso 1.1 — Instalar Ubuntu mínimo
+
+
+Ubuntu Server o Ubuntu Minimal
+
+
+Sin entorno gráfico
+
+
+Sin snaps obligatorios
+
+
+Resultado:
+
+
+Sistema estable
+
+
+Arranque rápido
+
+
+Terminal funcional
+
+
+
+Paso 1.2 — Usuarios
+
+
+Usuario kiosk
+
+
+Usuario admin (sudo)
+
+
+Configurar:
+
+
+kiosk sin sudo
+
+
+Autologin para kiosk
+
+
+Resultado:
+
+
+Separación clara de roles
+
+
+
+FASE 2 — Capa gráfica controlada
+Paso 2.1 — Instalar Xorg
+Instalar solo:
+
+
+xorg
+
+
+drivers GPU
+
+
+xinit
+
+
+No instalar:
+
+
+GNOME
+
+
+KDE
+
+
+Display manager
+
+
+Resultado:
+
+
+Entorno gráfico mínimo
+
+
+
+Paso 2.2 — Window manager ligero
+Instalar:
+
+
+openbox
+
+
+Configurar:
+
+
+Sin menús
+
+
+Sin decoraciones
+
+
+Sin atajos
+
+
+Resultado:
+
+
+Gestión básica de ventanas sin UI visible
+
+
+
+Paso 2.3 — Arranque gráfico
+Configurar:
+
+
+startx
+
+
+.xinitrc
+
+
+Acción:
+
+
+Arrancar Openbox
+
+
+Lanzar una app fullscreen (temporal)
+
+
+Resultado:
+
+
+Arranque directo a pantalla gráfica
+
+
+
+FASE 3 — Launcher propio (núcleo del sistema)
+Paso 3.1 — Proyecto JavaFX
+Crear:
+
+
+Proyecto Java (JavaFX)
+
+
+Ventana fullscreen
+
+
+Fondo simple
+
+
+Resultado:
+
+
+App gráfica arrancando en Xorg
+
+
+
+Paso 3.2 — Navegación básica
+Implementar:
+
+
+Menú con botones
+
+
+Navegación con teclado (flechas + enter)
+
+
+Resultado:
+
+
+UI funcional sin ratón
+
+
+
+Paso 3.3 — Lanzar procesos externos
+Implementar:
+
+
+ProcessBuilder
+
+
+Ejecutar comandos del sistema
+
+
+Ejemplos:
+
+
+retroarch
+
+
+chromium --kiosk
+
+
+kodi
+
+
+Resultado:
+
+
+Launcher controla todo
+
+
+
+FASE 4 — Integración de emulación
+Paso 4.1 — RetroArch
+Instalar:
+
+
+RetroArch
+
+
+Cores básicos
+
+
+Configurar:
+
+
+Fullscreen
+
+
+Salida limpia al cerrar
+
+
+Resultado:
+
+
+Emuladores funcionales
+
+
+
+Paso 4.2 — Volver al launcher
+Configurar RetroArch:
+
+
+Tecla/combinarión “Exit”
+
+
+Retorno al proceso padre
+
+
+Resultado:
+
+
+Flujo cerrado launcher ↔ emulador
+
+
+
+FASE 5 — Mando obligatorio
+Paso 5.1 — Reconocimiento del mando
+Configurar:
+
+
+Kernel input
+
+
+RetroArch autoconfig
+
+
+Resultado:
+
+
+Mando funcional en emulación
+
+
+
+Paso 5.2 — Mando en el launcher
+Implementar:
+
+
+Librería Java (JInput / SDL)
+
+
+Mapear botones a navegación
+
+
+Resultado:
+
+
+Launcher usable sin teclado
+
+
+
+FASE 6 — Apps modernas
+Paso 6.1 — Navegador en modo kiosk
+Instalar:
+
+
+Chromium
+
+
+Configurar:
+
+
+Perfil dedicado
+
+
+--kiosk
+
+
+--start-fullscreen
+
+
+Resultado:
+
+
+Streaming accesible desde menú
+
+
+
+Paso 6.2 — Multimedia
+Instalar:
+
+
+Kodi
+
+
+Integrar:
+
+
+Llamada desde launcher
+
+
+Resultado:
+
+
+Media center integrado
+
+
+
+FASE 7 — Control y seguridad (modo kiosk real)
+Paso 7.1 — Bloqueos
+Desactivar:
+
+
+Ctrl+Alt+Fx
+
+
+Alt+Tab
+
+
+Alt+F4
+
+
+Resultado:
+
+
+Usuario no escapa del sistema
+
+
+
+Paso 7.2 — Modo admin oculto
+Implementar:
+
+
+Combinación secreta
+
+
+Contraseña
+
+
+Apertura de terminal
+
+
+Resultado:
+
+
+Sistema administrable sin romper kiosk
+
+
+
+FASE 8 — Robustez
+Paso 8.1 — Supervisión
+Configurar:
+
+
+systemd service
+
+
+Reinicio del launcher si cae
+
+
+Resultado:
+
+
+Sistema auto-recuperable
+
+
+
+Paso 8.2 — Empaquetado
+Usar:
+
+
+jpackage
+
+
+Binario autocontenido
+
+
+Resultado:
+
+
+Launcher profesional y desplegable
+
+
+
+FASE 9 — Pulido final
+Ajustar:
+
+
+Resolución TV
+
+
+Overscan
+
+
+Input lag
+
+
+Arranque rápido
+
+
+Resultado:
+
+
+Experiencia consola real
+
+
+
+RESUMEN FINAL
+Al completar todas las fases tendrás:
+✔ Ubuntu minimal
+✔ Xorg controlado
+✔ Launcher JavaFX fullscreen
+✔ Emulación retro sólida
+✔ Mando obligatorio
+✔ Apps web y multimedia
+✔ Sistema kiosk real
+
+Siguiente paso recomendado
+El único paso correcto ahora es empezar por:
+👉 FASE 1 + FASE 2
+(dejar el sistema arrancando directamente a una pantalla gráfica vacía)
+Si quieres, el próximo mensaje puede ser:
+
+
+Detalle exacto de FASE 1 paso a paso
+
+
+O estructura inicial del launcher JavaFX
+
+
+Indica cuál y avanzamos.

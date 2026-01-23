@@ -1,0 +1,115 @@
+(Maquina virtual)
+Fase 1 
+ -> La maquina virtual pide un usuario - admin - password
+
+ -> instalacion de ubuntu 24.04.3 server minimal
+
+ -> añadir el usuario kiosk
+    -adduser kiosk
+
+ -> Actualizar repositorio apt y reiniciar
+    - sudo apt update
+    - sudo apt upgrade -y
+    - sudo reboot
+
+ -> configuracion del Hostname para visualizacion en red
+    - sudo hostnamectl set-hostname kiosk-system
+
+ -> Cambio de zona horaria a España peninsular 
+    - sudo timedatectl set-timezone Europe/Madrid
+
+ -> Configuracion del teclado 
+    - sudo dpkg-reconfigure keyboard-configuration
+    (Seguir los pasos )
+    - sudo service keyboard-setup restart
+
+
+-> Autologin del usuario kiosk
+    - (ir a la raiz de la maquina)
+    - sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+    - sudo nano /etc/systemd/system/getty@tty1.service.d/override.conf
+    "
+    [Service]
+    ExecStart=
+    ExecStart=-/sbin/agetty --autologin kiosk --noclear %I $TERM
+    "
+    sudo systemctl daemon-reexec
+    sudo systemctl restart getty@tty1
+
+ -> Reiniciar la maquina
+
+ -> Cambiar manualmente al usuario admin
+    -su admin
+
+ -> blindar las acciones que puede realizar kiosk
+    - sudo nano /etc/systemd/logind.conf
+    "
+    HandlePowerKey=ignore
+    HandleRebootKey=ignore
+    HandleSuspendKey=ignore
+    "
+    - sudo systemctl restart systemd-logind
+
+Fase 2 
+
+    -> Instalaciones de Xorg con dependencias
+    - sudo apt install xserver-xorg -y
+    - sudo apt install xinit -y
+    - sudo apt isntall x11-xserver-utils -y
+    - sudo apt install mesa-utils -y
+
+    -> Instalar open box
+    - sudo apt install openbox -y
+
+    -> cambiar al usuario kiosk
+    - sudo su kiosk
+
+    -> configuracion del entorno 
+    - nano ~/.xinitrc
+    "
+    #!/bin/sh
+
+    # Desactiva salvapantallas y energía
+    xset -dpms
+    xset s off
+    xset s noblank
+
+    # Arranca Openbox
+    exec openbox-session
+    "
+    - chmod +x ~/.xinitrc
+
+    -> reiniciar maquina
+
+    -> comprobar el entorno grafico
+    - startx
+
+    -> configurando el inicio del entorno grafico al Arrancar
+    - nano ~/.bash_profile
+    "
+    if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    startx
+    fi
+    "
+
+    -> Purgar el sistema
+    - sudo apt purge gnome-shell gdm3
+
+
+Fase 3
+
+    ->instalar git
+    -sudo apt install git
+    -git clone https://github.com/DanielRF75/Tutoriales.git
+    -git config --global --add safe.directory /Tutoriales
+    -git branch retro-smart
+    -git checkout retro-smart
+    -git config pull.rebase true
+    -git pull origin retro-smart
+
+    -> instalar Java
+    - sudo apt update
+    - sudo apt install openjdk-21-jdk
+
+    -> configurar los artifacts del ide
+    
