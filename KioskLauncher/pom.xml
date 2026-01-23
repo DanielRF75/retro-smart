@@ -79,7 +79,7 @@
                 </descriptorRefs>
                 <archive>
                     <manifest>
-                        <mainClass>com.kiosk.Main</mainClass>
+                        <mainClass>com.kiosk.kiosklauncher.Launcher</mainClass>
                     </manifest>
                 </archive>
             </configuration>
