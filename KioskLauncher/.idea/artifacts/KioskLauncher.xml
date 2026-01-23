@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="KioskLauncher">
+    <output-path>$PROJECT_DIR$/out/artifacts/KioskLauncher</output-path>
+    <root id="archive" name="KioskLauncher.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
