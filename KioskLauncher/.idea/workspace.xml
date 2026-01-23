@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="22282784-ea6d-4ca2-9065-07a8860e31ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intrucciones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../intrucciones.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KioskLauncher-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/KioskLauncher-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/KioskLauncher-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/KioskLauncher-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,7 @@
   "keyToString": {
     "Application.Launcher.executor": "Run",
     "Application.main.executor": "Run",
+    "Maven.KioskLauncher [clean,package].executor": "Run",
     "Maven.KioskLauncher [clean].executor": "Run",
     "Maven.KioskLauncher [compile].executor": "Run",
     "Maven.KioskLauncher [package].executor": "Run",
@@ -71,7 +74,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.KioskLauncher [clean,package]">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.kiosk.kiosklauncher.Launcher" />
       <module name="KioskLauncher" />
@@ -80,6 +83,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KioskLauncher [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="Maven.KioskLauncher [clean,package]" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -98,6 +136,7 @@
       <updated>1769184253693</updated>
       <workItem from="1769184254753" duration="5404000" />
       <workItem from="1769194001987" duration="1915000" />
+      <workItem from="1769209653376" duration="351000" />
     </task>
     <servers />
   </component>
