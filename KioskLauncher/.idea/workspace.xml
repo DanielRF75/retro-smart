@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22282784-ea6d-4ca2-9065-07a8860e31ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/KioskLauncher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/KioskLauncher.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/KioskLauncher/KioskLauncher.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
