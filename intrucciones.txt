@@ -100,16 +100,47 @@ Fase 3
 
     ->instalar git
     -sudo apt install git
-    -git clone https://github.com/DanielRF75/Tutoriales.git
-    -git config --global --add safe.directory /Tutoriales
-    -git branch retro-smart
-    -git checkout retro-smart
-    -git config pull.rebase true
-    -git pull origin retro-smart
+    -git clone https://github.com/DanielRF75/retro-smart.git
+    -git config --global --add safe.directory /retro-smart
+    -git pull origin 
 
     -> instalar Java
     - sudo apt update
     - sudo apt install openjdk-21-jdk
-
-    -> configurar los artifacts del ide
     
+    -> Comporbacion de que tenemos el xorg y el openbox para tener interfaz basica
+    - sudo apt update
+    - sudo apt install xorg openbox
+
+   -> configuracino del proyecto
+   -pomp
+   "
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.5.0</version>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals><goal>shade</goal></goals>
+            <configuration>
+                <transformers>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                        <mainClass>com.kiosk.kiosklauncher.Launcher</mainClass>
+                    </transformer>
+                </transformers>
+            </configuration>
+        </execution>
+    </executions>
+   </plugin>
+   "
+   -configurar la main clas en el pomp
+   -maven clean : package
+
+   -> configurar el openbox
+   - nano ~/.xinitrc  (home del usuario kiosk)
+   (agregar la linea antes del exec openbox-session)   
+   "
+   java -jar /home/kiosk/KioskLauncher.jar 
+   "
+   -startx
