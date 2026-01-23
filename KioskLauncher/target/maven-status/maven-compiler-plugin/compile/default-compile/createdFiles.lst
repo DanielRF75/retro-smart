@@ -1,0 +1,4 @@
+module-info.class
+com/kiosk/kiosklauncher/HelloApplication.class
+com/kiosk/kiosklauncher/HelloController.class
+com/kiosk/kiosklauncher/Launcher.class
