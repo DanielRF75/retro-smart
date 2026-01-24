@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Desactivar protector de pantalla / ahorro de energía
+xset -dpms
+xset s off
+xset s noblank
+
+# Loop para relanzar el launcher si se cierra
+while true; do
+    java -jar /home/kiosk/KioskLauncher.jar
+    sleep 1
+done
