@@ -74,7 +74,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.KioskLauncher [clean,package]">
+  <component name="RunManager">
     <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.kiosk.kiosklauncher.Launcher" />
       <module name="KioskLauncher" />

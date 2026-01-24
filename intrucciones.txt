@@ -144,3 +144,7 @@ Fase 3
    java -jar /home/kiosk/KioskLauncher.jar 
    "
    -startx
+
+Fase 4
+    -> Copiar el archivo de configuracion de open box
+    - cp /etc/xdg/openbox/rc.xml ~/.config/openbox/rc.xml
