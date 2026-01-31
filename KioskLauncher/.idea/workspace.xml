@@ -9,15 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22282784-ea6d-4ca2-9065-07a8860e31ef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kiosk/kiosklauncher/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/kiosk/kiosklauncher/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/kiosk/kiosklauncher/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/kiosk/kiosklauncher/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/kiosk/kiosklauncher/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/kiosk/kiosklauncher/hello-view.fxml" beforeDir="false" />
-    </list>
+    <list default="true" id="22282784-ea6d-4ca2-9065-07a8860e31ef" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +133,7 @@
       <workItem from="1769194001987" duration="1915000" />
       <workItem from="1769209653376" duration="351000" />
       <workItem from="1769852762878" duration="320000" />
-      <workItem from="1769853558368" duration="1203000" />
+      <workItem from="1769853558368" duration="1526000" />
     </task>
     <servers />
   </component>
