@@ -150,5 +150,21 @@ Fase 4
     - cp /retro-smart/rc.xml ~/.config/openbox/rc.xml
     - openbox --reconfigure
 
+    - sudo -i (entrar en modo sudo)
     - cp /retro/autostart /.config/openbox/autostart
     - chmod +x ~/.config/openbox/autostart
+
+Fase 5
+    -> instalacion de los navegadores
+    -sudo apt update
+    -sudo apt upgrade -y
+    -sudo apt install firefox
+    -sudo apt install chromium
+
+    -> isntalar retroarch
+    - sudo apt update
+    - sudo apt install retroarch retroarch-* libretro-*
+    - sudo apt install retroarch-common
+
+    -> explorador de archivos para desarrollo
+    - sudo apt install nautilus

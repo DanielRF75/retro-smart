@@ -41,10 +41,15 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(menu);
 
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ESCAPE) {
-                Platform.exit();
+
+    
+            // Alt + E -> abrir Nautilus
+            if (e.getCode() == KeyCode.E && e.isAltDown()) {
+                launchCommand("nautilus");
             }
         });
+
+
 
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setFullScreen(true);
